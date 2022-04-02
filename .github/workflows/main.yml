@@ -1,24 +1,27 @@
-name: Notify
+name: Notif
 
 on:
   schedule:
-    - cron: "0 8 * * *" # 8 a.m. every day UTC
+    - cron: "0 8 * * *"
+
   workflow_dispatch:
 
 jobs:
-  Notify:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install pipenv
-      run: pipx install pipenv
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
-        cache: 'pipenv'
-    - run: pipenv install --python `which python`
-    - name: Send notification
-      shell: bash
-      env:
-        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
-      run: python run bot.py
+      - uses: actions/checkout@v3
+      
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7.7' 
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install datetime slackclient slack
+      - name: Notif
+        env:
+          SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+        run: python bot.py
