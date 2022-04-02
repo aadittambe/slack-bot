@@ -30,12 +30,13 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 # client = WebClient(token=slack_token)
 print('hiiiiiii')
 
+test = os.getenv('TEST')
 
 # test = os.environ["TEST"]
 
 print('end')
 
-print(TEST)
+print(test)
 # try:
 #     response = client.chat_postMessage(
 #         channel="slack-bots",
