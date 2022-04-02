@@ -34,9 +34,10 @@ test = os.getenv('TEST')
 
 # test = os.environ["TEST"]
 
-print('end')
 
 print(test)
+print('end')
+
 # try:
 #     response = client.chat_postMessage(
 #         channel="slack-bots",
