@@ -4,8 +4,6 @@ from slack import WebClient
 from slack.errors import SlackApiError
 pd.set_option('display.max_columns', None)
 
-print('Started!')
-
 data = pd.read_json('https://healthdata.gov/resource/6xf2-c3ie.json')
 
 data = data[data.state != 'AS']
@@ -27,6 +25,8 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 🛏 Out of {(format (total_beds, ',d'))} available hospital beds in the country, {(format(covid_occupied_beds, ',d'))} beds are occupied by COVID-19 patients today, which account for {percent_covid_beds} percent of all beds.
 🧑‍⚕️ {percent_hospitals_critical_shortages} percent hospitals in the country are reporting critical staffing shortages today.
 """
+
+print('calc done!')
 
 slack_token = os.environ["SLACK_API_TOKEN"]
 client = WebClient(token=slack_token)
