@@ -21,4 +21,4 @@ jobs:
       shell: bash
       env:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
-      run: pipenv run jupyter execute notif.ipynb
+      run: pipenv run jupyter nbconvert --to notebook --execute notif.ipynb
