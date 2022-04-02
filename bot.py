@@ -31,7 +31,7 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 print('hiiiiiii')
 
 
-test = os.environ["TEST"]
+# test = os.environ["TEST"]
 
 print('end')
 
