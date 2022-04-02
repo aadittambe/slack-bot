@@ -35,7 +35,7 @@ print('hiiiiiii')
 
 print('end')
 
-print(test)
+print(TEST)
 # try:
 #     response = client.chat_postMessage(
 #         channel="slack-bots",
