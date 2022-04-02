@@ -18,6 +18,7 @@ jobs:
         cache: 'pipenv'
     - run: pipenv install --python `which python`
     - name: Send notification
+      shell: bash
       env:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
       run: pipenv run jupyter execute notif.ipynb
