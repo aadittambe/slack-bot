@@ -8,6 +8,7 @@ slackclient = "*"
 jupyterlab = "*"
 pandas = "*"
 requests = "*"
+numpy = "*"
 
 [dev-packages]
 
