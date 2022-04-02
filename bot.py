@@ -36,5 +36,6 @@ try:
         channel="slack-bots",
         text=msg
     )
+    print("success!")
 except SlackApiError as e:
     assert e.response["error"]
