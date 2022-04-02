@@ -1,0 +1,13 @@
+env:
+  TEST: ${{ secrets.TEST }}
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Say Hello Mona it's Monday"
+        run: echo "TEST"
+        env:
+          TEST: ${{ secrets.TEST }}
