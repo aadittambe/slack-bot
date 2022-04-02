@@ -27,6 +27,7 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 """
 
 # SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")
+SLACK_API_TOKEN = os.environ.get("SLACK_API_TOKEN")
 client = WebClient(token=SLACK_API_TOKEN)
 
 try:
