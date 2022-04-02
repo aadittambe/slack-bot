@@ -26,7 +26,7 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 🧑‍⚕️ {percent_hospitals_critical_shortages} percent hospitals in the country are reporting critical staffing shortages today.
 """
 
-# SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")g
+SLACK_API_TOKEN = os.environ("SLACK_API_TOKEN")
 client = WebClient(token=SLACK_API_TOKEN)
 
 try:
@@ -36,4 +36,8 @@ try:
     )
     print("success!")
 except SlackApiError as e:
+    # You will get a SlackApiError if "ok" is False
+    assert e.response["ok"] is False
+    # str like 'invalid_auth', 'channel_not_found'
     assert e.response["error"]
+    print(f"Got an error: {e.response['error']}")
