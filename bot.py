@@ -28,11 +28,16 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 
 slack_token = os.environ["SLACK_API_TOKEN"]
 client = WebClient(token=slack_token)
-try:
-    response = client.chat_postMessage(
-        channel="slack-bots",
-        text=msg
-    )
-    print("success!")
-except SlackApiError as e:
-    assert e.response["error"]
+
+test = os.environ["TEST"]
+
+
+print(test)
+# try:
+#     response = client.chat_postMessage(
+#         channel="slack-bots",
+#         text=msg
+#     )
+#     print("success!")
+# except SlackApiError as e:
+#     assert e.response["error"]
