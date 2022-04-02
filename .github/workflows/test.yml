@@ -1,6 +1,12 @@
 env:
   TEST: ${{ secrets.TEST }}
 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
