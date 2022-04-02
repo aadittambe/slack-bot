@@ -1,6 +1,9 @@
-env:
+name: test
+env: 
   TEST: ${{ secrets.TEST }}
 
+
+# Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
@@ -11,9 +14,9 @@ jobs:
   greeting_job:
     runs-on: ubuntu-latest
     env:
-      Greeting: Hello
+     TEST: ${{ secrets.TEST }}
     steps:
-      - name: "Say Hello Mona it's Monday"
+      - name: "test"
         run: echo "TEST"
         env:
           TEST: ${{ secrets.TEST }}
