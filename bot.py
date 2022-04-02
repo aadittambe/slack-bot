@@ -26,9 +26,7 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 🧑‍⚕️ {percent_hospitals_critical_shortages} percent hospitals in the country are reporting critical staffing shortages today.
 """
 
-print('hiiiiiii')
-
-SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")
+# SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")
 client = WebClient(token=SLACK_API_TOKEN)
 
 try:
