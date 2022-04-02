@@ -26,23 +26,16 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 🧑‍⚕️ {percent_hospitals_critical_shortages} percent hospitals in the country are reporting critical staffing shortages today.
 """
 
-# slack_token = os.environ["SLACK_API_TOKEN"]
-# client = WebClient(token=slack_token)
 print('hiiiiiii')
 
-test = os.getenv('TEST')
+SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")
+client = WebClient(token=SLACK_API_TOKEN)
 
-# test = os.environ["TEST"]
-
-
-print(test)
-print('end')
-
-# try:
-#     response = client.chat_postMessage(
-#         channel="slack-bots",
-#         text=msg
-#     )
-#     print("success!")
-# except SlackApiError as e:
-#     assert e.response["error"]
+try:
+    response = client.chat_postMessage(
+        channel="slack-bots",
+        text=msg
+    )
+    print("success!")
+except SlackApiError as e:
+    assert e.response["error"]
