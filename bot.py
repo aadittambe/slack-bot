@@ -28,8 +28,8 @@ msg = f"""📢 Daily COVID-19 hospitalization update 📢
 
 print('calc done!')
 
-slack_token = os.environ["SLACK_API_TOKEN"]
-client = WebClient(token=slack_token)
+# slack_token = os.environ["SLACK_API_TOKEN"]
+# client = WebClient(token=slack_token)
 
 test = os.environ["TEST"]
 
