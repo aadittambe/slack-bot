@@ -1,0 +1,23 @@
+name: Notify
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # 8 a.m. every day UTC
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install pipenv
+      run: pipx install pipenv
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        cache: 'pipenv'
+    - run: pipenv install --python `which python`
+    - name: Send notification
+      env:
+        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+      run: pipenv run jupyter execute notif.ipynb
