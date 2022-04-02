@@ -4,9 +4,6 @@ from slack import WebClient
 from slack.errors import SlackApiError
 pd.set_option('display.max_columns', None)
 
-slack_token = os.environ["SLACK_API_TOKEN"]
-client = WebClient(token=slack_token)
-
 data = pd.read_json('https://healthdata.gov/resource/6xf2-c3ie.json')
 
 data = data[data.state != 'AS']
