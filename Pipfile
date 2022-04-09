@@ -10,6 +10,7 @@ pandas = "*"
 requests = "*"
 numpy = "*"
 slack-bolt = "*"
+feedparser = "*"
 
 [dev-packages]
 
