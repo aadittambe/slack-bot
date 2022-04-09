@@ -9,6 +9,7 @@ jupyterlab = "*"
 pandas = "*"
 requests = "*"
 numpy = "*"
+slack-bolt = "*"
 
 [dev-packages]
 
