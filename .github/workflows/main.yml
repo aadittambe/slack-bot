@@ -22,3 +22,11 @@ jobs:
       env:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
       run: pipenv run jupyter execute notif.ipynb
+    - name: Add and commit	
+      run: |-	
+        git add .	
+        git config user.name "Automated"	
+        git config user.email "actions@users.noreply.github.com"	
+        git commit -m "Latest data" 	
+    - name: Push	
+      run: git push
