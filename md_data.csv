@@ -1,3 +1,4 @@
 date,md_beds,md_covid_occupied_beds,md_percent_covid_beds,md_critical_staffing_shortage_today_yes,md_critical_staffing_shortage_today_no,md_critical_staffing_shortage_today_not_reported,md_critical_staffing_shortage_today_yes,md_percent_hospitals_critical_shortages
 2022-04-20,10013,350,3.5,1,31,19,1,1.96
 2022-04-21,11228,356,3.17,1,38,19,1,1.72
+2022-04-22,11502,342,2.97,1,40,18,1,1.69
